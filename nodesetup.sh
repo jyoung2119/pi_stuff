@@ -30,7 +30,7 @@ echo 'batman-adv' | sudo tee --append /etc/modules
 
 echo 'denyinterfaces wlan0' | sudo tee --append /etc/dhcpcd.conf
 
-sudo sed '18 a /home/pi/start-batman-adv.sh &' /etc/rc.local
+sudo sed -i '18 a /home/pi/start-batman-adv.sh &' /etc/rc.local
 
 echo 'NODE SETUP COMPLETE'
 echo 'IF PI STAYING AS NODE PLEASE SHUTDOWN'
