@@ -18,8 +18,9 @@ EOF
 
 sudo chmod +x ~/start-batman-adv.sh
 
-# sudo cat > /etc/network/interfaces.d/wlan0 <<- "EOF"
-sudo cat <<'EOF' >/etc/network/interfaces.d/wlan0
+sudo chmod 777 /etc/network/interfaces.d
+
+sudo cat > /etc/network/interfaces.d/wlan0 <<- "EOF"
 auto wlan0
 iface wlan0 inet manual
     wireless-channel 1
