@@ -1,21 +1,22 @@
 #!/bin/bash
 
-HOSTNM ="/etc/hostname"
-
-if grep -Fq "raspberrypi" $HOSTNM
+if test $# -eq 0
 then
-  sed -i "s/raspberrypi/rpiGate/" $HOSTNM
-else
-  echo "rpiGate" >> $HOSTNM
+    echo "No name on command line."
+    exit 1
 fi
 
-HOST = "/etc/hosts"
+echo $1
+NAME=$1
+echo $NAME
 
-if grep -Fq "raspberrypi" $HOST
-then
-  sed -i "s/raspberrypi/rpiGate/" $HOST
-else
-  echo "no hosts"
-fi
+echo $NAME | sudo tee  /etc/hostname
 
+sudo sed -i -e 's/^.*hostname-setter.*$//g' /etc/hosts
+echo "127.0.1.1      " $NAME " ### Set by hostname-setter"  | sudo tee -a /etc/hosts
+
+sudo service hostname.sh stop
+sudo service hostname.sh start
+
+echo "Hostname set. Log out to see it on the command line"
 sudo reboot -n
