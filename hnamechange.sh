@@ -1,7 +1,5 @@
 #!/bin/sh
 
-sudo apt-get update && sudo apt-get upgrade -y
-
 HOSTNM ="/etc/hostname"
 
 if grep -Fq "raspberrypi" $HOSTNM
