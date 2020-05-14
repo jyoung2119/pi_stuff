@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo 'sh <script> <newhostname>'
+
 if test $# -eq 0
 then
     echo "No name on command line."
