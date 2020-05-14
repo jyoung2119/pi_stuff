@@ -1,7 +1,6 @@
-First run "sudo apt-get update && sudo apt-get upgrade -y"
 Run hnamechange.sh like this "sh hnamechange.sh <newhostname>"
 Then run nodesetup.sh (If pi is intended to be a gateway, do not shut down)
-  If intended to be gateway, run gatewaysetup.sh
+  If intended to be ethernet gateway, run gatewaysetup.sh. If WiFi gateway, run wifigateway.sh.
     Shutdown gateway
 Run "ifconfig" on command line on the gateway pi
   You should see all the interfaces on your gateway pi
