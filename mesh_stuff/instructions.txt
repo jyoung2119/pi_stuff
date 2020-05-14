@@ -1,4 +1,5 @@
-First, run hnamechange.sh like this "sh hnamechange.sh <newhostname>"
+First run "sudo apt-get update && sudo apt-get upgrade -y"
+Run hnamechange.sh like this "sh hnamechange.sh <newhostname>"
 Then run nodesetup.sh (If pi is intended to be a gateway, do not shut down)
   If intended to be gateway, run gatewaysetup.sh
     Shutdown gateway
