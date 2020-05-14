@@ -4,8 +4,10 @@ read -p "Enter Country Code: " country
 echo "Country Code: $country"
 read -p "Enter Network Name: " name
 echo "Desired Network Name: $name"
+name=\"${name}\"
 read -p "Enter Network Password: " pword
 echo "Password: $pword"
+pword=\"${pword}\"
 
 sudo chmod 777 /etc/wpa_supplicant/wpa_supplicant.conf
 
@@ -14,9 +16,9 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=$country
 network={
-    ssid=\"${name}\"
+    ssid=$name
     scan_ssid=1
-    psk=\"${pword}\"
+    psk=$pword
 }
 EOF
 
