@@ -7,6 +7,7 @@ echo "Desired Network Name: $name"
 read -p "Enter Network Password: " pword
 echo "Password: $pword"
 
+sudo chmod 777 /etc/wpa_supplicant/wpa_supplicant.conf
 
 sudo cat > /etc/wpa_supplicant/wpa_supplicant.conf <<- "EOF"
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -18,6 +19,8 @@ network={
     psk="'$pword'"
 }
 EOF
+
+sudo chmod 600 /etc/wpa_supplicant/wpa_supplicant.conf
 
 sudo cat > ~/start-batman-adv.sh <<- "EOF"
 #!/bin/bash
