@@ -14,9 +14,9 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=$country
 network={
-    ssid=\"$name\"
+    ssid=\"${name}\"
     scan_ssid=1
-    psk=\"$pword\"
+    psk=\"${pword}\"
 }
 EOF
 
