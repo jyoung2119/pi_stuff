@@ -1,0 +1,11 @@
+First, run hnamechange.sh like this "sh hnamechange.sh <newhostname>"
+Then run nodesetup.sh (If pi is intended to be a gateway, do not shut down)
+  If intended to be gateway, run gatewaysetup.sh
+    Shutdown gateway
+Run "ifconfig" on command line on the gateway pi
+  You should see all the interfaces on your gateway pi
+Run "iwconfig" to show the wireless interfaces on the device
+Run "sudo batctl if" to show the interfaces participating in the mesh
+  You should see response "wlan0: active" to show that the WiFi interface wlan0 is part of the mesh
+Run "sudo batctl n" to show the neighbouring mesh nodes your gateway node can see
+  You should see the mac addresses of the contributing nodes
