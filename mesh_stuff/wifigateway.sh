@@ -4,9 +4,11 @@ read -p "Enter Country Code: " country
 echo "Country Code: $country"
 read -p "Enter Network Name: " name
 echo "Desired Network Name: $name"
-read -s -p "Enter Network Password: " pword
+read -p "Enter Network Password: " pword
+echo "Password: $pword"
 
-sudo cat > /etc/wpa_supplicant/wpa_supplicant.conf. <<- "EOF"
+
+sudo cat > /etc/wpa_supplicant/wpa_supplicant.conf <<- "EOF"
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 country=$country
