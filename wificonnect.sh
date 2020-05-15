@@ -26,11 +26,10 @@ read -p "Enter Network Password: " pword
 #sudo sed -i -e"s/^    psk=.*/    psk=\"$pword/""/" /etc/wpa_supplicant/wpa_supplicant.conf
 
 echo "" >> /etc/wpa_supplicant/wpa_supplicant.conf
-exho "country=$country" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "country=$country" >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo "network={" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "	ssid=\"$SSID\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "	psk=\"$PASS\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
-echo "	key_mgmt=WPA-PSK" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "	ssid=\"$name\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
+echo "	psk=\"$pword\"" >> /etc/wpa_supplicant/wpa_supplicant.conf
 echo "}" >> /etc/wpa_supplicant/wpa_supplicant.conf
 
 #sudo chmod 755 /etc/wpa_supplicant
