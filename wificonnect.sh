@@ -22,8 +22,8 @@ EOF
 sudo chmod 777 /etc/wpa_supplicant
 
 sudo sed -i -e"s/^country=.*/country=$country/" /etc/wpa_supplicant/wpa_supplicant.conf
-sudo sed -i -e"s/^    ssid=.*/    ssid=""$name""/" /etc/wpa_supplicant/wpa_supplicant.conf
-sudo sed -i -e"s/^    psk=.*/    psk=""$pword""/" /etc/wpa_supplicant/wpa_supplicant.conf
+sudo sed -i -e"s/^    ssid=.*/    ssid=\"$name\""/" /etc/wpa_supplicant/wpa_supplicant.conf
+sudo sed -i -e"s/^    psk=.*/    psk=\"$pword/""/" /etc/wpa_supplicant/wpa_supplicant.conf
 
 sudo chmod 755 /etc/wpa_supplicant
 
